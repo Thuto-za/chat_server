@@ -8,13 +8,15 @@ import logging
 from bs4 import BeautifulSoup
 from azure.storage.blob import BlobServiceClient, ContentSettings
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Azure Blob Storage configuration
-STORAGE_CONNECTION_STRING = os.getenv("AZURE_CONNECTION_STRING")
+#HACK
+
+STORAGE_CONNECTION_STRING = os.getenv("AZURE_STRING")
 api_key = os.getenv("GOOGLE_API_KEY")
 STATIC_WEBSITE_CONTAINER = "$web"  # Special container for static websites
 
